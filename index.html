@@ -17,16 +17,16 @@ if true return to the login in page
   session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
+//if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+  //  header("location: login.php");
+    //exit;
 }
 
-if ($_SESSION["id"] == 1)
+//if ($_SESSION["id"] == 1)
 include "nav.php";
 
-if ($_SESSION["id"] == 2)
-include "nav-user.php";
+//if ($_SESSION["id"] == 2)
+//include "nav-user.php";
 
 /*The php code checks to see if the user has an active session */
 
