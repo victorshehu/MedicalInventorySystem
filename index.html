@@ -1,44 +1,20 @@
-<?php
-
-/*  This is the home page, the first page the user is routed to after successfully login
-Last Editted on DATE BY Victor Shehu
-
-Future Suggestions
-	- Make pictures the same size as the user's screen
-	- Timer that automatically logs the user out after 1hr
-
-
-
-
-
-if true return to the login in page
-
-*/
-  session_start();
- 
-// Check if the user is logged in, if not then redirect him to login page
-//if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-  //  header("location: login.php");
-    //exit;
-}
-
-//if ($_SESSION["id"] == 1)
-include "nav.php";
-
-//if ($_SESSION["id"] == 2)
-//include "nav-user.php";
-
-/*The php code checks to see if the user has an active session */
-
-?>
 <html>
 
+
 	<head>
+
+
 			<title>Welcome</title>
 			<link rel= "icon" type="image/jpg" href ="Images/homepic1a.jpg"/>  
 	
  			
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
+<script>
+$(function(){
+  $("#nav-placeholder").load("nav.html");
+});
+</script>
 			<script>
      			 var imageSources = ["Images/download.jpg", "Images/homepic2.jpg", "Images/homepic7.jpg" , "Images/homepic4.jpg",  "Images/homepic9.jpg", "Images/homepic6.jpg"]
      			// The array above is where all the picture you want should be included the images change every 3 seconds 
@@ -57,7 +33,9 @@ include "nav.php";
 	<body>
 			
 
+<div id="nav-placeholder">
 
+</div>
 	  		
 
 	      
