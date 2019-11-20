@@ -30,7 +30,7 @@
 require 'config.php';
 
 
-$sql_query = "SELECT  * from RoomsTable";
+$sql_query = "SELECT  * from RoomsTable1";
 
 
 $result = mysqli_query($conn, $sql_query);
