@@ -76,7 +76,7 @@ $searchq = $_GET{'itemname'};
 
 $searchq = htmlspecialchars($searchq); 
 
-$sql_query = "SELECT i.ItemNo, i.ItemName, r.RoomNo, r.RoomName, i.ShelfNo,i.Quantity from RoomsTable r, ItemsTables i WHERE r.RoomNo = i.RoomNo and i.ItemName like '%$searchq%'";
+$sql_query = "SELECT i.ItemNo, i.ItemName, r.RoomNo, r.RoomName, i.ShelfNo,i.Quantity from RoomsTable1 r, ItemsTables i WHERE r.RoomNo = i.RoomNo and i.ItemName like '%$searchq%'";
 
 
 
