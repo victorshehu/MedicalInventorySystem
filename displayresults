@@ -1,0 +1,69 @@
+<html>
+
+<head>
+<title>Result</title>
+<link rel= "icon" type="image/jpg" href ="Images/homepic1a.jpg"/>  
+<link rel="stylesheet" type="text/css" href="CSS/display.css"/>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+      $(function(){
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+</head>
+<body>
+
+<div id = "nav-placeholder"></div> 
+
+
+<?php
+require 'config.php';
+
+
+
+
+$RoomNo_q = $_POST{'roomno'};
+
+
+
+$sql_query = "SELECT i.ItemNo, i.ItemName, i.ShelfNo, i.Quantity from RoomsTable1 r, ItemsTables i WHERE r.RoomNo = '$RoomNo_q' AND r.RoomNo = i.RoomNo ";
+
+
+
+
+$result = mysqli_query($conn, $sql_query);
+
+
+//echo $conn ? 'connected' : 'not conected';
+
+$count = mysqli_num_rows($result);
+
+
+echo"<table border ='1'>";
+echo"<tr><td>ItemName</td><td>ShelfNo</td><td>Quantity</td></tr>";
+
+
+if($count == "0"){
+echo'<h2>No result found!</h2>';
+    }
+
+
+else{
+while($row = mysqli_fetch_assoc($result)){
+$itemno = $row['ItemNo'];
+$item = $row['ItemName'];
+$roomno = $row['RoomNo'];
+$roomname = $row['RoomName'];
+$shelfno = $row['ShelfNo'];
+$quantity = $row['Quantity'];
+
+
+echo"<tr><td>$item</td><td>$shelfno</td><td>$quantity</td></tr>";
+    
+}
+echo"</table>";
+}
+
+?>
+</body>
+</html>
